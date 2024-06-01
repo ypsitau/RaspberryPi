@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 import smbus
 
-sla = 0x70
+sla = 0x08
 bus = smbus.SMBus(1)
-#bus.write_byte_data(sla, 0x12, 0x13)
-value = bus.read_byte_data(sla, 0x45)
-print("%x" % value)
+
+print("write_byte_data")
+bus.write_byte_data(sla, 0x12, 0x34)
+
+print("write_i2c_block_data")
+bus.write_i2c_block_data(sla, 0x12, [1, 2, 3, 4, 5, 6])
