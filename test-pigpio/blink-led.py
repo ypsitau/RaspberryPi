@@ -2,6 +2,7 @@
 import pigpio
 import time
 
+
 pi = pigpio.pi()
 
 while True:
